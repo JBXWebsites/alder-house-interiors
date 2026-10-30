@@ -1,0 +1,57 @@
+# Publish only the reviewed application. Local planning stays local.
+/*
+!/.gitignore
+!/.env.example
+!/README.md
+!/package.json
+!/package-lock.json
+!/tsconfig.json
+!/next.config.ts
+!/app/
+!/components/
+!/lib/
+!/tests/
+!/public/
+!/scripts/
+!/.github/
+!/docs/
+
+# Only these four source images are public documentation assets.
+/docs/*
+!/docs/concepts/
+/docs/concepts/*
+!/docs/concepts/palm-court.png
+!/docs/concepts/bay-window.png
+!/docs/concepts/tide-house.png
+!/docs/concepts/materials.png
+
+/.github/*
+!/.github/workflows/
+/.github/workflows/*
+!/.github/workflows/checks.yml
+
+# Defense in depth inside otherwise allowed directories.
+node_modules/
+.next/
+.vercel/
+.codex/
+.agents/
+.env*
+!/.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.log
+*.tsbuildinfo
+next-env.d.ts
+test-results/
+playwright-report/
+coverage/
+artifacts/
+tmp/
+.DS_Store
+Thumbs.db
+
+# Temporary review surface; remove its import before publication.
+/components/DevAudit.tsx

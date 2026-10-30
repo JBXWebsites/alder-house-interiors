@@ -1,0 +1,357 @@
+[
+  {
+    "file": "/images/palm-court.webp",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 272420,
+    "source": "docs/concepts/palm-court.png",
+    "rectangle": null
+  },
+  {
+    "file": "/images/palm-court-640.webp",
+    "width": 640,
+    "height": 427,
+    "bytes": 56662,
+    "source": "docs/concepts/palm-court.png",
+    "rectangle": null
+  },
+  {
+    "file": "/images/palm-court-960.webp",
+    "width": 960,
+    "height": 640,
+    "bytes": 119136,
+    "source": "docs/concepts/palm-court.png",
+    "rectangle": null
+  },
+  {
+    "file": "/images/bay-window.webp",
+    "width": 1024,
+    "height": 1536,
+    "bytes": 206276,
+    "source": "docs/concepts/bay-window.png",
+    "rectangle": null
+  },
+  {
+    "file": "/images/bay-window-640.webp",
+    "width": 640,
+    "height": 960,
+    "bytes": 93480,
+    "source": "docs/concepts/bay-window.png",
+    "rectangle": null
+  },
+  {
+    "file": "/images/bay-window-960.webp",
+    "width": 960,
+    "height": 1440,
+    "bytes": 181520,
+    "source": "docs/concepts/bay-window.png",
+    "rectangle": null
+  },
+  {
+    "file": "/images/tide-house.webp",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 163050,
+    "source": "docs/concepts/tide-house.png",
+    "rectangle": null
+  },
+  {
+    "file": "/images/tide-house-640.webp",
+    "width": 640,
+    "height": 427,
+    "bytes": 35194,
+    "source": "docs/concepts/tide-house.png",
+    "rectangle": null
+  },
+  {
+    "file": "/images/tide-house-960.webp",
+    "width": 960,
+    "height": 640,
+    "bytes": 71112,
+    "source": "docs/concepts/tide-house.png",
+    "rectangle": null
+  },
+  {
+    "file": "/images/materials.webp",
+    "width": 1024,
+    "height": 1536,
+    "bytes": 210798,
+    "source": "docs/concepts/materials.png",
+    "rectangle": null
+  },
+  {
+    "file": "/images/materials-640.webp",
+    "width": 640,
+    "height": 960,
+    "bytes": 94310,
+    "source": "docs/concepts/materials.png",
+    "rectangle": null
+  },
+  {
+    "file": "/images/materials-960.webp",
+    "width": 960,
+    "height": 1440,
+    "bytes": 186298,
+    "source": "docs/concepts/materials.png",
+    "rectangle": null
+  },
+  {
+    "file": "/images/palm-court-light.webp",
+    "width": 800,
+    "height": 600,
+    "bytes": 115620,
+    "source": "docs/concepts/palm-court.png",
+    "rectangle": {
+      "left": 0,
+      "top": 60,
+      "width": 800,
+      "height": 600
+    }
+  },
+  {
+    "file": "/images/palm-court-light-640.webp",
+    "width": 640,
+    "height": 480,
+    "bytes": 79328,
+    "source": "docs/concepts/palm-court.png",
+    "rectangle": {
+      "left": 0,
+      "top": 60,
+      "width": 800,
+      "height": 600
+    }
+  },
+  {
+    "file": "/images/palm-court-layout.webp",
+    "width": 800,
+    "height": 600,
+    "bytes": 73174,
+    "source": "docs/concepts/palm-court.png",
+    "rectangle": {
+      "left": 360,
+      "top": 50,
+      "width": 800,
+      "height": 600
+    }
+  },
+  {
+    "file": "/images/palm-court-layout-640.webp",
+    "width": 640,
+    "height": 480,
+    "bytes": 49704,
+    "source": "docs/concepts/palm-court.png",
+    "rectangle": {
+      "left": 360,
+      "top": 50,
+      "width": 800,
+      "height": 600
+    }
+  },
+  {
+    "file": "/images/palm-court-material.webp",
+    "width": 686,
+    "height": 514,
+    "bytes": 39018,
+    "source": "docs/concepts/palm-court.png",
+    "rectangle": {
+      "left": 850,
+      "top": 40,
+      "width": 686,
+      "height": 514
+    }
+  },
+  {
+    "file": "/images/palm-court-material-640.webp",
+    "width": 640,
+    "height": 480,
+    "bytes": 33630,
+    "source": "docs/concepts/palm-court.png",
+    "rectangle": {
+      "left": 850,
+      "top": 40,
+      "width": 686,
+      "height": 514
+    }
+  },
+  {
+    "file": "/images/bay-window-light.webp",
+    "width": 494,
+    "height": 1000,
+    "bytes": 75976,
+    "source": "docs/concepts/bay-window.png",
+    "rectangle": {
+      "left": 530,
+      "top": 120,
+      "width": 494,
+      "height": 1000
+    }
+  },
+  {
+    "file": "/images/bay-window-table.webp",
+    "width": 720,
+    "height": 720,
+    "bytes": 92666,
+    "source": "docs/concepts/bay-window.png",
+    "rectangle": {
+      "left": 20,
+      "top": 680,
+      "width": 720,
+      "height": 720
+    }
+  },
+  {
+    "file": "/images/bay-window-table-640.webp",
+    "width": 640,
+    "height": 640,
+    "bytes": 72952,
+    "source": "docs/concepts/bay-window.png",
+    "rectangle": {
+      "left": 20,
+      "top": 680,
+      "width": 720,
+      "height": 720
+    }
+  },
+  {
+    "file": "/images/bay-window-shelf.webp",
+    "width": 360,
+    "height": 900,
+    "bytes": 38906,
+    "source": "docs/concepts/bay-window.png",
+    "rectangle": {
+      "left": 0,
+      "top": 0,
+      "width": 360,
+      "height": 900
+    }
+  },
+  {
+    "file": "/images/tide-house-island.webp",
+    "width": 890,
+    "height": 600,
+    "bytes": 80186,
+    "source": "docs/concepts/tide-house.png",
+    "rectangle": {
+      "left": 90,
+      "top": 300,
+      "width": 890,
+      "height": 600
+    }
+  },
+  {
+    "file": "/images/tide-house-island-640.webp",
+    "width": 640,
+    "height": 431,
+    "bytes": 43280,
+    "source": "docs/concepts/tide-house.png",
+    "rectangle": {
+      "left": 90,
+      "top": 300,
+      "width": 890,
+      "height": 600
+    }
+  },
+  {
+    "file": "/images/tide-house-table.webp",
+    "width": 836,
+    "height": 484,
+    "bytes": 58524,
+    "source": "docs/concepts/tide-house.png",
+    "rectangle": {
+      "left": 700,
+      "top": 540,
+      "width": 836,
+      "height": 484
+    }
+  },
+  {
+    "file": "/images/tide-house-table-640.webp",
+    "width": 640,
+    "height": 371,
+    "bytes": 35932,
+    "source": "docs/concepts/tide-house.png",
+    "rectangle": {
+      "left": 700,
+      "top": 540,
+      "width": 836,
+      "height": 484
+    }
+  },
+  {
+    "file": "/images/tide-house-frame.webp",
+    "width": 520,
+    "height": 800,
+    "bytes": 25520,
+    "source": "docs/concepts/tide-house.png",
+    "rectangle": {
+      "left": 860,
+      "top": 0,
+      "width": 520,
+      "height": 800
+    }
+  },
+  {
+    "file": "/brand/favicon-16.png",
+    "width": 16,
+    "height": 16,
+    "bytes": 307,
+    "source": "Original AH joinery mark, BRAND-SYSTEM.md",
+    "rectangle": null
+  },
+  {
+    "file": "/brand/favicon-32.png",
+    "width": 32,
+    "height": 32,
+    "bytes": 528,
+    "source": "Original AH joinery mark, BRAND-SYSTEM.md",
+    "rectangle": null
+  },
+  {
+    "file": "/brand/favicon-48.png",
+    "width": 48,
+    "height": 48,
+    "bytes": 701,
+    "source": "Original AH joinery mark, BRAND-SYSTEM.md",
+    "rectangle": null
+  },
+  {
+    "file": "/brand/apple-touch-icon.png",
+    "width": 180,
+    "height": 180,
+    "bytes": 2387,
+    "source": "Original AH joinery mark, BRAND-SYSTEM.md",
+    "rectangle": null
+  },
+  {
+    "file": "/images/social-home.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 106530,
+    "source": "docs/concepts/palm-court.png + original editorial label composition",
+    "rectangle": null
+  },
+  {
+    "file": "/images/social-palm-court.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 106598,
+    "source": "docs/concepts/palm-court.png + original editorial label composition",
+    "rectangle": null
+  },
+  {
+    "file": "/images/social-bay-window.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 100840,
+    "source": "docs/concepts/bay-window.png + original editorial label composition",
+    "rectangle": null
+  },
+  {
+    "file": "/images/social-tide-house.jpg",
+    "width": 1200,
+    "height": 630,
+    "bytes": 78989,
+    "source": "docs/concepts/tide-house.png + original editorial label composition",
+    "rectangle": null
+  }
+]
