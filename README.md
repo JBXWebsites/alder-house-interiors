@@ -1,5 +1,7 @@
 # Alder House
 
+[Visit Alder House](https://alder-house-interiors.vercel.app) · [Source repository](https://github.com/JBXWebsites/alder-house-interiors)
+
 A fictional residential interiors studio, created as a portfolio concept by JBX Web Studio. Palm Court, Bay Window and Tide House are imagined room studies, not completed client commissions. All interior imagery is AI-generated.
 
 The website pairs broad room views with notes about light, layout and everyday use. Three full stories lead to a working demo that prepares a project brief for the visitor to keep. Alder House is not an operating interiors business.
@@ -78,6 +80,8 @@ The AH mark and interface are project-authored. Third-party research samples are
 
 Set the project runtime to Node.js 22. No database, mail service or paid API credential is required. Keep actual environment files and tokens out of Git. Environment changes require a new deployment.
 
+The live project is connected to this repository on Vercel. Updates to `main` trigger production deployment. Its firewall limits `POST /api/brief` to 10 requests per IP per 60-second fixed window; platform counters are regional, not a global quota. This project setting is not provisioned by the application source.
+
 The URL helper rejects missing deployed configuration, non-HTTPS public origins and origins containing credentials or extra URL components. Previews use noindex/nofollow and an empty, unadvertised sitemap. Robots.txt allows fetching so crawlers can read noindex; it is not access control. Use platform preview protection where required. Production sitemap contains only the homepage, three studies and credits.
 
 Before publication, verify canonical identity in built HTML/sitemap/social URLs; exact API origins; hosting privacy settings; response headers; direct routes and 404 status; keyboard/phone behavior; and native/enhanced brief downloads. Inspect the deployed revision outside an authenticated session. Keep the previous known-good deployment for rollback; disable brief preparation separately if necessary.
@@ -86,4 +90,12 @@ Before publication, verify canonical identity in built HTML/sitemap/social URLs;
 
 This is a portfolio concept with three static studies, not a CMS or real inquiry service. Source images are 1536x1024 landscapes or 1024x1536 portraits; tighter crops contain fewer pixels. Enlarging them does not add image detail.
 
-Unit tests and TypeScript checks are reproducible locally. Hosted CI, deployment smoke tests, browser coverage and performance results must be verified against the released commit. No field performance data, commercial results, award, universal browser compatibility or accessibility certification is claimed. A public deployment URL will be documented only after verification.
+The first release passed 16 backend tests, TypeScript checks and a production build in clean GitHub CI on Node.js 22. Desktop and phone layouts, navigation, room disclosures, validation, brief preparation and clipboard output were checked in the browser. Automated accessibility checks found no violations in the sampled development pages and form states; this is not an accessibility certification.
+
+Public HTTP checks cover all five pages, a missing-project 404, canonical URLs, response headers, the production sitemap and native/enhanced brief responses. Run them against the production origin:
+
+```sh
+node scripts/smoke.mjs https://alder-house-interiors.vercel.app
+```
+
+The smoke check submits four synthetic brief requests and does not send an inquiry or create a saved record. Avoid repeated runs within the firewall window. Physical-device Safari, native screen-reader use, rendered print output and field performance remain unverified. No commercial results, award or universal browser compatibility is claimed.

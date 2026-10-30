@@ -1,0 +1,46 @@
+import assert from 'node:assert/strict';
+
+assert(process.argv[2], 'Pass the verified production origin as the first argument.');
+const origin=new URL(process.argv[2]).origin;
+const results=[];
+const paths=['/','/projects/palm-court','/projects/bay-window','/projects/tide-house','/about-this-project'];
+for(const path of paths){
+ const response=await fetch(origin+path);
+ assert.equal(response.status,200,`${path}: HTTP status`);
+ const html=await response.text();
+ assert(html.includes('Alder House'),`${path}: expected content`);
+ const canonicalTag = html.match(/<link\b[^>]*rel="canonical"[^>]*>/)?.[0];
+ const canonical = canonicalTag?.match(/href="([^"]+)"/)?.[1];
+ assert(canonical, `${path}: canonical link exists`);
+ assert.equal(new URL(canonical).href,new URL(path,origin).href,`${path}: canonical URL`);
+ assert(!html.includes('Run accessibility scan'),`${path}: development controls absent`);
+ assert.equal(response.headers.get('x-content-type-options'),'nosniff');
+ assert(response.headers.get('content-security-policy')?.includes("object-src 'none'"));
+ results.push({path,status:response.status});
+}
+const missing=await fetch(origin+'/projects/not-a-study');
+assert.equal(missing.status,404,'Unknown study must return404');
+const sitemap=await(await fetch(origin+'/sitemap.xml')).text();
+assert.equal((sitemap.match(/<loc>/g)||[]).length,5,'Sitemap has exactly five pages');
+assert(!sitemap.includes('localhost'),'Production sitemap does not use localhost');
+const body=new URLSearchParams({space:'living-room',scope:'single-room',brief:'A quieter room for reading, conversation and books.',inspiration:'palm-court'});
+const headers={'content-type':'application/x-www-form-urlencoded',origin,'sec-fetch-site':'same-origin'};
+const enhanced=await fetch(origin+'/api/brief',{method:'POST',headers:{...headers,accept:'application/json'},body});
+assert.equal(enhanced.status,200,'Enhanced brief');
+assert.equal(enhanced.headers.get('cache-control'),'no-store');
+const payload=await enhanced.json();
+assert.equal(payload.delivery,'not-sent');
+assert.equal(payload.applicationStorage,'not-persisted');
+const native=await fetch(origin+'/api/brief',{method:'POST',headers,body});
+assert.equal(native.status,200,'Native brief');
+assert(native.headers.get('content-disposition')?.includes('attachment'));
+assert.equal(await native.text(),payload.briefText,'Native/enhanced parity');
+const invalid=await fetch(origin+'/api/brief',{method:'POST',headers,body:'space=living-room&scope=single-room&brief=short'});
+assert.equal(invalid.status,422,'Editable validation error');
+assert.equal(invalid.headers.get('referrer-policy'),'strict-origin-when-cross-origin');
+assert(invalid.headers.get('content-security-policy')?.includes("default-src 'none'"));
+const foreign=await fetch(origin+'/api/brief',{method:'POST',headers:{...headers,origin:'https://example.org','sec-fetch-site':'cross-site',accept:'application/json'},body});
+assert.equal(foreign.status,403,'Foreign-origin rejection');
+const unsupported=await fetch(origin+'/api/brief');
+assert.equal(unsupported.status,405,'GET is unsupported');
+console.log(JSON.stringify({origin,pages:results,missing:404,sitemapPages:5,brief:{enhanced:200,native:200,parity:true,invalid:422,foreign:403,unsupported:405}},null,2));
