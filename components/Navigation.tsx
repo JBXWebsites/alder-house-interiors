@@ -45,6 +45,7 @@ export function TopLink({
 }
 export default function Navigation() {
   const ref = useRef<HTMLElement>(null);
+  const menu = useRef<HTMLDetailsElement>(null);
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
@@ -70,13 +71,27 @@ export default function Navigation() {
         Tampa Bay, imagined
       </span>
       <nav aria-label="Main navigation">
-        <a href="/#work">Work</a>
-        <a className="desktop-nav" href="/#approach">
-          Approach
-        </a>
+        <details ref={menu} className="phone-menu" onKeyDown={(event) => {
+          if (event.key === "Escape" && menu.current?.open) {
+            menu.current.open = false;
+            menu.current.querySelector("summary")?.focus();
+          }
+        }}>
+          <summary>Explore <span aria-hidden="true">+</span></summary>
+          <div className="phone-menu-links" onClick={(event) => {
+            if ((event.target as HTMLElement).closest("a") && menu.current) menu.current.open = false;
+          }}>
+            <a href="/#work">The rooms</a>
+            <a href="/#studio">Point of view</a>
+            <a href="/#approach">Our approach</a>
+            <a href="/about-this-project">About this concept</a>
+          </div>
+        </details>
+        <a className="desktop-nav" href="/#work">Work</a>
         <a className="desktop-nav" href="/#studio">
           Studio
         </a>
+        <a className="desktop-nav" href="/#approach">Approach</a>
         <a href="/#project-brief" className="header-begin">
           <span className="desktop-label">Begin a project</span>
           <span className="phone-label">Begin</span>
