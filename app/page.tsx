@@ -50,37 +50,9 @@ export default async function Home({
         </div>
         <RoomNotes notes={palm.notes} />
         <div className="study-spread">
-          <article className="bay-study" id="bay-window">
-            <a
-              href="/projects/bay-window"
-              className="image-link"
-              aria-label="Explore Bay Window"
-            >
-              <StudioImage
-                src="/images/bay-window.webp"
-                srcSet="/images/bay-window-640.webp 640w, /images/bay-window.webp 1024w"
-                sizes="(max-width:760px) 100vw, 42vw"
-                width="1024"
-                height="1536"
-                alt={projects[1].alt}
-                loading="lazy"
-                decoding="async"
-                data-reveal
-              />
-            </a>
-            <div className="study-meta">
-              
-              <span>Breakfast corner</span>
-            </div>
-            <h3>
-              <a href="/projects/bay-window">
-                Bay Window <Arrow />
-              </a>
-            </h3>
-            <p>
-              A sunny corner becomes a place to stay a little longer. Breakfast,
-              reading and the everyday pile of books.
-            </p>
+          <article className="bay-study room-chapter" id="bay-window">
+            <div className="chapter-copy"><p className="room-kind">Breakfast & reading</p><h3 data-heading>Bay<br /><em>Window.</em></h3><p>A built-in seat turns a sunny corner into somewhere to spend the morning.</p><a className="text-link" href="/projects/bay-window">Explore Bay Window <Arrow /></a></div>
+            <a href="/projects/bay-window" className="project-photo" aria-label="View the Bay Window room story"><div className="photo-depth" data-parallax data-image-reveal><StudioImage src="/images/bay-window.webp" srcSet="/images/bay-window-640.webp 640w, /images/bay-window.webp 1024w" sizes="(max-width:760px) 100vw, 55vw" width="1024" height="1536" alt={projects[1].alt} loading="lazy" decoding="async" /></div><span className="image-visit" aria-hidden="true">Enter the room <Arrow /></span></a>
           </article>
           <div className="tide-column">
 
