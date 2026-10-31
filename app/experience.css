@@ -1,4 +1,24 @@
 /* Alder House: an inhabited, photographic journey. */
+.site-footer { padding:80px 0 28px; }
+.footer-top > p { font-size:clamp(38px,4.5vw,66px); }
+.footer-directory { display:grid; grid-template-columns:2fr 1fr 1fr; gap:60px; margin-top:72px; padding-top:40px; border-top:1px solid #f8f6f13d; }
+.footer-about > svg { width:42px; height:42px; margin-bottom:24px; }
+.footer-about p { font-size:15px; line-height:1.7; margin-bottom:18px; }
+.footer-about a { font-size:14px; }
+.footer-directory nav { display:flex; flex-direction:column; align-items:flex-start; }
+.footer-label { font-size:13px; margin-bottom:16px; opacity:.8; }
+.footer-directory nav a { display:flex; align-items:center; min-height:44px; font-size:17px; }
+.footer-signature { font:400 clamp(70px,15.7vw,245px)/1.2 var(--font-serif); letter-spacing:-.065em; margin:72px 0 30px; white-space:nowrap; }
+.footer-colophon { display:flex; align-items:center; justify-content:space-between; gap:32px; border-top:1px solid #f8f6f13d; padding-top:24px; font-size:12px; }
+@media(max-width:760px) {
+ .site-footer { padding:56px 0 28px; }
+ .footer-directory { grid-template-columns:1fr 1fr; gap:36px 24px; margin-top:40px; padding-top:32px; }
+ .footer-about { grid-column:1/-1; }
+ .footer-about > svg { display:none; }
+ .footer-signature { font-size:14.5vw; margin:48px 0 24px; }
+ .footer-colophon { display:block; }
+ .footer-colophon p + p { margin-top:12px; }
+}
 :root { --plaster: oklch(91.5% .022 79); --olive: oklch(37% .035 100); --section-space: clamp(88px, 10vw, 160px); }
 h1, h2, h3 { text-wrap: balance; }
 .arrival { padding-top: clamp(32px, 4vw, 64px); }

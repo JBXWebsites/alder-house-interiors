@@ -95,48 +95,22 @@ export default function RootLayout({
         <footer className="site-footer">
           <div className="shell">
             <div className="footer-top">
-              <p>
-                Room for the things
-                <br />
-                that make a life.
-              </p>
-              <TopLink className="text-link">
-                Back to top <Arrow direction="up" />
-              </TopLink>
+              <p>Make room<br /><em>for living.</em></p>
+              <TopLink className="text-link">Back to top <Arrow direction="up" /></TopLink>
             </div>
-            <div className="footer-wordmark">
-              Alder House
-              <span>
+            <div className="footer-directory">
+              <div className="footer-about">
                 <Monogram />
-              </span>
-            </div>
-            <div className="footer-bottom">
-              <p>
-                A fictional interiors studio.
-                <br />
-                Concept studies, not client projects.
-                <br />
-                Interior imagery is AI-generated.
-              </p>
-              <nav aria-label="Footer navigation">
-                <a href="/#work">Work</a>
-                <a href="/#approach">Approach</a>
-                <a href="/#studio">Studio</a>
-                <a href="/#project-brief">Build a brief</a>
-              </nav>
-              <div>
-                <a href="/about-this-project" className="underlined">
-                  About this concept
-                </a>
-                <p className="jbx-credit">
-                  Concept, design & development
-                  <br />
-                  by{" "}
-                  <a className="underlined" href="https://www.jbxwebstudio.com">
-                    JBX Web Studio
-                  </a>
-                </p>
+                <p>A fictional interiors studio.<br />A real exploration of thoughtful design.</p>
+                <a className="underlined" href="/about-this-project">About this concept</a>
               </div>
+              <nav aria-label="Explore the rooms"><p className="footer-label">The rooms</p><a href="/projects/palm-court">Palm Court</a><a href="/projects/bay-window">Bay Window</a><a href="/projects/tide-house">Tide House</a></nav>
+              <nav aria-label="Footer navigation"><p className="footer-label">The studio</p><a href="/#studio">Point of view</a><a href="/#approach">Our approach</a><a href="/#project-brief">Build a brief</a></nav>
+            </div>
+            <div className="footer-signature" aria-hidden="true">Alder House</div>
+            <div className="footer-colophon">
+              <p>Concept studies · AI-generated interior imagery</p>
+              <p>Designed & built by <a className="underlined" href="https://www.jbxwebstudio.com">JBX Web Studio</a></p>
             </div>
           </div>
         </footer>
@@ -145,3 +119,4 @@ export default function RootLayout({
     </html>
   );
 }
+
