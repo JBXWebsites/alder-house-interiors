@@ -62,6 +62,12 @@ export default async function Home({
           </div>
         </div>
       </section>
+      <section className="material-story" id="studio" aria-labelledby="studio-title">
+        <div className="shell material-layout">
+          <figure><div className="material-photo" data-parallax><StudioImage src="/images/materials-daylight-1024.webp" srcSet="/images/materials-daylight-640.webp 640w, /images/materials-daylight-1024.webp 1024w" sizes="(max-width:760px) 100vw, 45vw" width="1024" height="1536" alt="Creased linen, a limestone sample, walnut and a tea cup on a worn oak worktable beside a window." loading="lazy" decoding="async" /></div><figcaption>Linen, limestone and walnut. Seen in daylight.</figcaption></figure>
+          <div className="material-copy"><h2 id="studio-title" data-heading>Made to<br />be touched.<br /><em>And lived with.</em></h2><p>Linen that softens. Timber that wears in. Stone that holds its texture. A home gets better when its materials can show a little life.</p><a className="text-link" href="/about-this-project">Our point of view <Arrow /></a></div>
+        </div>
+      </section>
       <section
         className="approach-section"
         id="approach"
@@ -138,48 +144,6 @@ export default async function Home({
               </div>
             ))}
           </div>
-        </div>
-      </section>
-      <section
-        className="studio-section shell"
-        id="studio"
-        aria-labelledby="studio-title"
-      >
-        <figure>
-          <StudioImage
-            src="/images/materials.webp"
-            srcSet="/images/materials-640.webp 640w, /images/materials.webp 1024w"
-            sizes="(max-width:760px) 100vw, 42vw"
-            alt="Blue linen, pale stone, timber and ceramics arranged on a dark wooden table."
-            width="1024"
-            height="1536"
-            loading="lazy"
-            decoding="async"
-            data-reveal
-          />
-          <figcaption>A study in texture: linen, stone and timber.</figcaption>
-        </figure>
-        <div className="studio-copy">
-          <span className="eyebrow">The things we live with</span>
-          <h2 id="studio-title">
-            A home should
-            <br />
-            leave room
-            <br />
-            <em>for you.</em>
-          </h2>
-          <p>
-            The book left open. The chair that always turns toward the window.
-            The pieces that have followed you from one home to the next.
-          </p>
-          <p>
-            Alder House is imagined around those details. A quieter approach to
-            interiors, where light, texture and the way a room is used belong in
-            the same conversation.
-          </p>
-          <a className="text-link" href="/about-this-project">
-            About this JBX concept <Arrow />
-          </a>
         </div>
       </section>
       <section

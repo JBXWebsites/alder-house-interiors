@@ -61,6 +61,21 @@ h1, h2, h3 { text-wrap: balance; }
 .tide-caption p { font-size:18px; }
 .tide-caption .room-kind { font-size:14px; }
 .tide-caption .text-link { margin-top:24px; }
+.material-story { padding-block:var(--section-space); background:var(--olive); color:var(--chalk); }
+.material-layout { display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:12%; }
+.material-photo { height:clamp(480px,52vw,760px); overflow:hidden; position:relative; }
+.material-photo > img { width:100%; height:120%; top:-10%; position:relative; object-fit:cover; }
+.material-layout figcaption { font-size:13px; margin-top:18px; }
+.material-copy h2 { font-size:clamp(48px,5.7vw,86px); line-height:1.07; }
+.material-copy p { margin-top:36px; font-size:18px; max-width:32ch; }
+.material-copy .text-link { margin-top:36px; }
+@media(max-width:760px) {
+ .material-layout { display:flex; flex-direction:column-reverse; gap:40px; align-items:stretch; }
+ .material-copy h2 { font-size:48px; }
+ .material-copy p { font-size:16px; margin-top:24px; }
+ .material-copy .text-link { margin-top:24px; }
+ .material-photo { height:470px; }
+}
 @media(max-width:760px) {
  .tide-caption { display:block; margin-top:28px; }
  .tide-caption h3 { font-size:56px; }
