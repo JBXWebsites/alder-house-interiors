@@ -133,7 +133,7 @@ export default function RoomNotes({ notes }: { notes: Note[] }) {
             alt="A blue sofa faces a low timber table, with courtyard light, a slatted screen and dark shelves around the room."
           />
           {enhanced && !selected && (
-            <div className="room-points" aria-label="Explore details in the room">
+            <div className="room-points" role="group" aria-label="Explore details in the room">
               {[{ id: "light", label: "Daylight" }, { id: "layout", label: "The screen" }, { id: "material", label: "Shelving" }].map((point) => (
                 <button key={point.id} className={`room-point point-${point.id}`} aria-label={`Explore ${point.label.toLowerCase()}`} onClick={() => {
                   const detail = root.current?.querySelector<HTMLDetailsElement>(`details[data-note="${point.id}"]`);

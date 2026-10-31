@@ -456,6 +456,8 @@ export default function BriefBuilder({
                       href={`#brief-${field}`}
                       onClick={(event) => {
                         event.preventDefault();
+                        if (["location", "timing", "inspiration"].includes(field) && extrasRef.current)
+                          extrasRef.current.open = true;
                         (
                           formRef.current?.elements.namedItem(
                             field,

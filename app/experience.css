@@ -181,3 +181,11 @@ h1, h2, h3 { text-wrap: balance; }
  .arrival-caption span + span { margin-top:4px; }
 }
 @media print { .arrival-photo {height:220pt;} .arrival-plane {height:100%;top:0;transform:none!important;} .arrival-title {font-size:36pt;} }
+@media print {
+ .photo-depth, .material-photo { height:auto!important; overflow:visible!important; clip-path:none!important; transform:none!important; }
+ .photo-depth > img, .material-photo > img { width:auto!important; max-width:100%!important; height:auto!important; max-height:250pt!important; top:0!important; transform:none!important; object-fit:contain!important; }
+ .room-points, .image-visit, .phone-menu { display:none!important; }
+ .material-layout, .bay-study { display:block; }
+ .footer-signature { font-size:36pt; margin:20pt 0; transform:none!important; opacity:1!important; }
+ .material-story { background:white; color:#222; }
+}

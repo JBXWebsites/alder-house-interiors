@@ -53,11 +53,11 @@ export default async function Home({
         <div className="study-spread">
           <article className="bay-study room-chapter" id="bay-window">
             <div className="chapter-copy"><p className="room-kind">Breakfast & reading</p><h3 data-heading>Bay<br /><em>Window.</em></h3><p>A built-in seat turns a sunny corner into somewhere to spend the morning.</p><a className="text-link" href="/projects/bay-window">Explore Bay Window <Arrow /></a></div>
-            <a href="/projects/bay-window" className="project-photo" aria-label="View the Bay Window room story"><div className="photo-depth" data-parallax data-image-reveal><StudioImage src="/images/bay-window.webp" srcSet="/images/bay-window-640.webp 640w, /images/bay-window.webp 1024w" sizes="(max-width:760px) 100vw, 55vw" width="1024" height="1536" alt={projects[1].alt} loading="lazy" decoding="async" /></div><span className="image-visit" aria-hidden="true">Enter the room <Arrow /></span></a>
+            <a href="/projects/bay-window" className="project-photo" aria-label="Enter the room: Bay Window"><div className="photo-depth" data-parallax data-image-reveal><StudioImage src="/images/bay-window.webp" srcSet="/images/bay-window-640.webp 640w, /images/bay-window.webp 1024w" sizes="(max-width:760px) 100vw, 55vw" width="1024" height="1536" alt={projects[1].alt} loading="lazy" decoding="async" /></div><span className="image-visit" aria-hidden="true">Enter the room <Arrow /></span></a>
           </article>
           <div className="tide-column">
             <article className="tide-study room-chapter" id="tide-house">
-              <a href="/projects/tide-house" className="project-photo" aria-label="View the Tide House room story"><div className="photo-depth" data-parallax data-image-reveal><StudioImage src="/images/tide-house.webp" srcSet="/images/tide-house-640.webp 640w, /images/tide-house-960.webp 960w, /images/tide-house.webp 1536w" sizes="100vw" width="1536" height="1024" alt={projects[2].alt} loading="lazy" decoding="async" /></div><span className="image-visit" aria-hidden="true">Enter the room <Arrow /></span></a>
+              <a href="/projects/tide-house" className="project-photo" aria-label="Enter the room: Tide House"><div className="photo-depth" data-parallax data-image-reveal><StudioImage src="/images/tide-house.webp" srcSet="/images/tide-house-640.webp 640w, /images/tide-house-960.webp 960w, /images/tide-house.webp 1536w" sizes="100vw" width="1536" height="1024" alt={projects[2].alt} loading="lazy" decoding="async" /></div><span className="image-visit" aria-hidden="true">Enter the room <Arrow /></span></a>
               <div className="tide-caption"><div><p className="room-kind">Kitchen & gathering</p><h3 data-heading>Tide House.</h3></div><div><p>One space for making dinner.<br />And making a night of it.</p><a className="text-link" href="/projects/tide-house">Explore Tide House <Arrow /></a></div></div>
             </article>
           </div>
@@ -100,4 +100,5 @@ export default async function Home({
     </main>
   );
 }
+
 
