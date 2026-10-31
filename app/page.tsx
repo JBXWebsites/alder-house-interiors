@@ -18,77 +18,15 @@ export default async function Home({
   const palm = projects.find((p) => p.slug === "palm-court")!;
   return (
     <main id="main" tabIndex={-1}>
-      <section className="hero shell" aria-labelledby="hero-heading">
-        <div className="hero-kicker">
-          <span>
-            Considered spaces.
-            <br />
-            Everyday living.
-          </span>
-          <span>
-            A fictional studio.
-            <br />A JBX Web Studio concept.
-          </span>
+      <section className="arrival" aria-labelledby="hero-heading">
+        <div className="arrival-heading shell">
+          <h1 className="arrival-title" id="hero-heading"><span className="line-mask"><span>Rooms for</span></span><span className="line-mask"><span><em>the life within.</em></span></span></h1>
+          <a className="text-link arrival-link" href="#work">Come inside <Arrow direction="down" /></a>
         </div>
-        <div className="hero-brand" aria-hidden="true">
-          Alder House
-        </div>
-        <div className="hero-stage">
-          <div className="hero-intro">
-            <h1 id="hero-heading">
-              Rooms for
-              <br />
-              <em>
-                the way
-                <br />
-                you live.
-              </em>
-            </h1>
-            <p>
-              Residential interiors in Tampa Bay, from a thoughtfully furnished
-              room to a considered renovation.
-            </p>
-            <a className="text-link" href="#work">
-              Explore the rooms <Arrow />
-            </a>
-          </div>
-          <figure className="hero-main">
-            <div className="hero-image-window">
-              <StudioImage
-                className="hero-image-plane"
-                src="/images/palm-court.webp"
-                srcSet="/images/palm-court-640.webp 640w, /images/palm-court-960.webp 960w, /images/palm-court.webp 1536w"
-                sizes="(max-width:760px) 100vw, 65vw"
-                width="1536"
-                height="1024"
-                alt="Palm Court: a mineral-blue sofa, leather chair and timber table in a sunlit living room, with a courtyard beyond."
-                fetchPriority="high"
-                decoding="async"
-              />
-            </div>
-            <figcaption>
-              <span>Palm Court</span>
-              <span>Living, in good company.</span>
-            </figcaption>
-          </figure>
-          <figure className="hero-detail">
-            <StudioImage
-              src="/images/materials-640.webp"
-              width="1024"
-              height="1536"
-              alt="Linen, stone and timber, the material palette of the imagined studio."
-              loading="lazy"
-              decoding="async"
-            />
-            <figcaption>A feeling, in the details.</figcaption>
-          </figure>
-        </div>
-        <div className="hero-foot">
-          <span>Light. Texture. A little room to be yourself.</span>
-          <a href="#work" aria-label="Explore selected room studies">
-            <Arrow direction="down" />
-          </a>
-        </div>
+        <figure>
+          <div className="arrival-photo"><StudioImage className="arrival-plane" src="/images/arrival-1536.webp" srcSet="/images/arrival-640.webp 640w, /images/arrival-960.webp 960w, /images/arrival-1536.webp 1536w" sizes="100vw" width="1536" height="1024" alt="A shaded plaster doorway opens into a linen-furnished sitting room and a leafy courtyard." fetchPriority="high" decoding="async" /></div>
+          <figcaption className="arrival-caption shell"><span>Residential interiors, with room to live.</span><span>A fictional studio by JBX Web Studio.</span></figcaption>
+        </figure>
       </section>
       <section
         className="work-section shell"

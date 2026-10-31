@@ -5,6 +5,7 @@ import Navigation, { TopLink } from "@/components/Navigation";
 import { Arrow, Monogram } from "@/components/Icons";
 import Motion from "@/components/Motion";
 import "./globals.css";
+import "./experience.css";
 const serif = localFont({
   src: [
     {
