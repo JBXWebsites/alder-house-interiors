@@ -164,7 +164,7 @@ export default function RoomNotes({ notes }: { notes: Note[] }) {
       </div>
       <div className="notes-column">
         <div className="notes-heading">
-          <span className="eyebrow">Room notes</span>
+          <span className="notes-label">Look closer</span>
           <button
             type="button"
             className="overview-button"
@@ -179,18 +179,12 @@ export default function RoomNotes({ notes }: { notes: Note[] }) {
             The whole room <span aria-hidden="true">↗</span>
           </button>
         </div>
-        <p className="notes-intro">
-          A closer look at the choices
-          <br />
-          that hold the room together.
-        </p>
-        {notes.map((note, i) => (
+<p className="notes-intro">A room is made<br />of small decisions.</p>
+        {notes.map((note) => (
           <details name="room-notes" key={note.id} data-note={note.id}>
             <summary>
-              <span className="note-number">0{i + 1}</span>
               <span className="summary-copy">
                 <span className="note-title">{note.title}</span>
-                <span className="note-observation">{note.observation}</span>
               </span>
               <span className="disclosure-icon" aria-hidden="true">
                 <svg width="16" height="16" viewBox="0 0 24 24">
@@ -214,7 +208,7 @@ export default function RoomNotes({ notes }: { notes: Note[] }) {
                   <span>The detail, within the whole.</span>
                 </figcaption>
               </figure>
-              <p>{note.text}</p>
+              <p>{note.observation} {note.text}</p>
             </div>
           </details>
         ))}

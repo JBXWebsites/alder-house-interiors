@@ -26,6 +26,14 @@ h1, h2, h3 { text-wrap: balance; }
 .room-directory svg { grid-column:2; grid-row:1/3; align-self:center; }
 .room-directory a:hover { color:var(--rust); }
 .work-heading { margin-bottom:44px; }
+.notes-label { font-size:14px; }
+.notes-intro { font:400 clamp(26px,3vw,40px)/1.2 var(--font-serif); letter-spacing:-.035em; margin:36px 0; }
+.room-notes summary { display:flex; align-items:center; justify-content:space-between; padding:26px 0; }
+.room-notes .summary-copy { flex:1; }
+.room-notes .note-title { font-size:clamp(23px,2.2vw,32px); }
+.room-notes .note-body { padding:0 0 28px; }
+.room-notes .note-body p { font-size:15px; line-height:1.7; }
+.room-notes .note-body p { max-width:42ch; }
 @media(max-width:760px) {
  .room-directory { display:block; margin-bottom:64px; }
  .room-directory a { padding:18px 0; }
