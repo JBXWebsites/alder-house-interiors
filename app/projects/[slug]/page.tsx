@@ -98,8 +98,7 @@ export default async function ProjectPage({ params }: Props) {
         className="story-question shell"
         aria-labelledby="story-question"
       >
-        <p className="story-section-label">The starting point</p>
-        <h2 id="story-question">{project.question}</h2>
+        <h2 id="story-question" data-heading>{project.question}</h2>
         <p className="story-response">{project.response}</p>
       </section>
 
@@ -108,8 +107,8 @@ export default async function ProjectPage({ params }: Props) {
         aria-labelledby="story-notes"
       >
         <div className="story-notes-heading">
-          <h2 id="story-notes">A closer look.</h2>
-          <p>Three decisions within the same room.</p>
+          <h2 id="story-notes" data-heading>The room,<br /><em>up close.</em></h2>
+          <p>Light, shape and the details that earn their place.</p>
         </div>
         <div className="story-note-sequence">
           {project.notes.map((note, index) => (
@@ -118,7 +117,7 @@ export default async function ProjectPage({ params }: Props) {
               key={note.id}
               aria-labelledby={`note-${note.id}`}
             >
-              <figure className="story-note-image" data-reveal>
+              <figure className="story-note-image" data-image-reveal>
                 <Image
                   src={note.image}
                   alt={note.alt}
@@ -126,16 +125,9 @@ export default async function ProjectPage({ params }: Props) {
                   height={note.height}
                   sizes="(max-width: 760px) calc(100vw - 44px), (max-width: 1199px) 55vw, 48vw"
                 />
-                <figcaption>
-                  {String(index + 1).padStart(2, "0")} / Detail from the room
-                  study
-                </figcaption>
               </figure>
               <div className="story-note-copy">
-                <span className="story-note-number" aria-hidden="true">
-                  0{index + 1}
-                </span>
-                <h3 id={`note-${note.id}`}>{note.title}</h3>
+                <h3 id={`note-${note.id}`} data-heading>{note.title}</h3>
                 <p>{note.text}</p>
               </div>
             </article>
@@ -146,7 +138,7 @@ export default async function ProjectPage({ params }: Props) {
       <section className="story-reflection" aria-labelledby="story-reflection">
         <div className="shell story-reflection-inner">
           <div className="story-palette">
-            <span>Threads through the room</span>
+            <span>Palette & texture</span>
             <ul>
               {project.palette.map((material) => (
                 <li key={material}>{material}</li>
@@ -154,15 +146,16 @@ export default async function ProjectPage({ params }: Props) {
             </ul>
           </div>
           <div className="story-closing">
-            <h2 id="story-reflection">{project.closing}</h2>
+            <h2 id="story-reflection" data-heading>{project.closing}</h2>
             <a
               href={`/?inspiration=${project.slug}#project-brief`}
               className="story-link"
             >
-              Use {project.title} as a starting point <Arrow />
+              Build your brief <Arrow />
             </a>
             <p className="story-demo-note">
-              Prepare a brief to keep. This demo does not send an inquiry.
+              {project.title} will be selected as your inspiration. Prepare a
+              brief to keep; this demo does not send an inquiry.
             </p>
           </div>
         </div>
@@ -173,21 +166,22 @@ export default async function ProjectPage({ params }: Props) {
         aria-label="Continue exploring room studies"
       >
         <div className="story-next-copy">
-          <span>Another way to live</span>
+          <span>Step into the next room</span>
           <a className="story-next-title" href={`/projects/${next.slug}`}>
             {next.title}
             <Arrow />
           </a>
           <p>{next.category.split(" / ")[0]}</p>
           <a href="/#work" className="story-link">
-            All room studies <Arrow />
+            Back to all rooms <Arrow />
           </a>
         </div>
         <a
-          className={`story-next-image next-${next.slug}`}
+          className={`story-next-image project-photo next-${next.slug}`}
           href={`/projects/${next.slug}`}
           aria-label={`Explore ${next.title}`}
         >
+          <div className="story-next-media" data-parallax data-image-reveal>
           <Image
             src={next.image}
             alt={next.alt}
@@ -195,6 +189,7 @@ export default async function ProjectPage({ params }: Props) {
             height={next.height}
             sizes="(max-width: 760px) calc(100vw - 44px), 48vw"
           />
+          </div>
         </a>
       </nav>
     </main>
