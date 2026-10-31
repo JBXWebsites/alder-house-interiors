@@ -152,6 +152,7 @@ export default function BriefBuilder({
     const start = (event: Event) => {
       const choice = (event as CustomEvent<{scope: string; space: string}>).detail;
       if (!choice || !isOption("scope", choice.scope)) return;
+      event.preventDefault();
       requestId.current += 1;
       requestRef.current?.abort();
       requestRef.current = null;
