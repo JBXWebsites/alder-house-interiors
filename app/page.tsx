@@ -86,21 +86,10 @@ export default async function Home({
       >
         <div className="shell brief-layout">
           <div className="brief-invitation">
-            <span className="eyebrow">Your project</span>
-            <h2 id="brief-invitation">
-              Begin with
-              <br />
-              the room
-              <br />
-              <em>you have.</em>
-            </h2>
-            <p>
-              A corner, a whole room, or the first thought of something bigger
-              is enough to begin.
-            </p>
-            <div className="brief-flourish" aria-hidden="true">
-              A<span>H</span>
-            </div>
+            
+<h2 id="brief-invitation" data-heading>What would<br /><em>feel better?</em></h2>
+<p>Choose a space. Tell us what you would change. Leave with a brief you can make your own.</p>
+
           </div>
           <Suspense fallback={<p>The brief form is loading.</p>}>
             <BriefBuilder initialInspiration={inspiration} />

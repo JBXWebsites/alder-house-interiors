@@ -83,6 +83,23 @@ h1, h2, h3 { text-wrap: balance; }
 .service-choices details > div p { font-size:16px; max-width:42ch; }
 .service-choices .text-link { margin-top:20px; }
 .service-disclosure { border-top:1px solid var(--rule); padding-top:20px; font-size:13px; }
+.brief-section { background:var(--plaster); padding-block:var(--section-space); }
+.brief-layout { grid-template-columns:.85fr 1.3fr; gap:8%; align-items:start; }
+.brief-invitation h2 { font-size:clamp(52px,5.8vw,86px); margin-top:0; }
+.brief-invitation > p { margin-top:32px; max-width:26ch; font-size:18px; }
+.brief-builder { background:var(--chalk); padding:clamp(28px,3.5vw,52px); }
+.brief-builder h3 { font:500 21px/1.4 var(--font-sans); letter-spacing:0; }
+.brief-fields { gap:24px 20px; }
+.brief-field input,.brief-field select,.brief-field textarea { background:transparent; border-color:var(--rule); border-radius:0; }
+.brief-field input:focus,.brief-field select:focus,.brief-field textarea:focus { border-color:var(--ink); }
+.brief-button { background:var(--olive); border-color:var(--olive); border-radius:0; }
+@media(max-width:900px) {
+ .brief-layout { display:block; }
+ .brief-invitation { margin-bottom:40px; }
+ .brief-invitation > p { max-width:42ch; font-size:16px; }
+ .brief-builder { padding:28px; }
+}
+@media(max-width:500px) { .brief-builder { padding:24px 18px; margin-inline:-6px; width:calc(100% + 12px); } }
 @media(max-width:760px) {
  .approach-layout { display:block; }
  .approach-intro { margin-bottom:44px; }
