@@ -33,31 +33,15 @@ export default async function Home({
         id="work"
         aria-labelledby="work-title"
       >
-        <div className="section-heading">
-          <span className="eyebrow">01 / The rooms</span>
-          <div>
-            <h2 id="work-title">
-              An ordinary day.
-              <br />
-              <em>A considered setting.</em>
-            </h2>
-            <p>
-              Three imagined homes. An attention to light, materials and the
-              small routines that make a place your own.
-            </p>
-          </div>
-        </div>
-        <div className="project-intro">
+        <div className="work-heading"><h2 id="work-title" data-heading>Three rooms.<br /><em>Three ways to live.</em></h2><p>Imagined interiors, explored in detail.</p></div>
+        <div className="project-intro" id="palm-court">
           <div>
             <span className="eyebrow">
-              Living room & dining / Residential study
+              Living & dining
             </span>
             <h3>Palm Court</h3>
           </div>
-          <p>
-            A room for conversation, with enough separation to let the day
-            unfold around it.
-          </p>
+
         </div>
         <RoomNotes notes={palm.notes} />
         <div className="study-spread">
@@ -80,7 +64,7 @@ export default async function Home({
               />
             </a>
             <div className="study-meta">
-              <span>02</span>
+              
               <span>Breakfast corner</span>
             </div>
             <h3>
@@ -94,15 +78,7 @@ export default async function Home({
             </p>
           </article>
           <div className="tide-column">
-            <p className="spread-bridge">
-              Different rooms.
-              <br />
-              <em>
-                The same attention
-                <br />
-                to everyday life.
-              </em>
-            </p>
+
             <article className="tide-study">
               <a
                 href="/projects/tide-house"
@@ -122,7 +98,7 @@ export default async function Home({
                 />
               </a>
               <div className="study-meta">
-                <span>03</span>
+                
                 <span>Kitchen & dining</span>
               </div>
               <h3>
@@ -145,7 +121,7 @@ export default async function Home({
       >
         <div className="shell">
           <div className="section-heading">
-            <span className="eyebrow">02 / The approach</span>
+            <span className="eyebrow">How we work</span>
             <div>
               <h2 id="approach-title">
                 A considered home starts
@@ -236,7 +212,7 @@ export default async function Home({
           <figcaption>A study in texture: linen, stone and timber.</figcaption>
         </figure>
         <div className="studio-copy">
-          <span className="eyebrow">03 / A point of view</span>
+          <span className="eyebrow">The things we live with</span>
           <h2 id="studio-title">
             A home should
             <br />
@@ -265,7 +241,7 @@ export default async function Home({
       >
         <div className="shell brief-layout">
           <div className="brief-invitation">
-            <span className="eyebrow">04 / Your starting point</span>
+            <span className="eyebrow">Your project</span>
             <h2 id="brief-invitation">
               Begin with
               <br />

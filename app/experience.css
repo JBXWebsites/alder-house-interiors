@@ -11,6 +11,19 @@ h1, h2, h3 { text-wrap: balance; }
 .arrival-plane { width:100%; height:120%; max-width:none; position:relative; top:-10%; object-fit:cover; object-position:50% 60%; }
 .arrival-caption { display:flex; justify-content:space-between; gap:32px; padding-top:18px; font-size:14px; margin-top:0; }
 .arrival-photo > .media-fallback { height:100%; top:0; }
+.work-section { padding-block:var(--section-space); }
+.work-heading { display:flex; align-items:flex-end; justify-content:space-between; gap:32px; margin-bottom:96px; }
+.work-heading h2 { font-size:clamp(48px,6vw,88px); }
+.work-heading p { max-width:24ch; padding-bottom:10px; }
+.project-intro { display:block; margin-bottom:32px; }
+.project-intro .eyebrow { text-transform:none; letter-spacing:0; font-size:15px; }
+.project-intro h3 { margin-top:12px; font-size:clamp(44px,5vw,72px); }
+.study-meta { justify-content:flex-start; text-transform:none; letter-spacing:0; font-size:14px; }
+@media(max-width:760px) {
+ .work-heading { display:block; margin-bottom:64px; }
+ .work-heading p { margin-top:24px; max-width:none; }
+ .project-intro { margin-bottom:24px; }
+}
 @media(max-width:760px) {
  .arrival { padding-top:40px; }
  .arrival-heading { display:block; padding-bottom:28px; }
