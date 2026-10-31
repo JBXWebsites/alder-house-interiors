@@ -1,0 +1,4 @@
+.motion-control { flex-shrink:0; }
+.motion-control .text-link { padding:10px 0; min-height:44px; background:none; color:inherit; border:0; border-bottom:1px solid currentColor; font-size:12px; cursor:pointer; gap:8px; }
+.motion-control button:focus-visible { outline:2px solid currentColor; outline-offset:4px; }
+@media print { .motion-control { display:none; } }

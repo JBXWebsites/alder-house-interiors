@@ -4,6 +4,7 @@ import StudioImage from "@/components/StudioImage";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { useMotionEnabled } from "./MotionControl";
 type Note = {
   id: string;
   title: string;
@@ -50,6 +51,7 @@ function Locator({ id, title }: { id: string; title: string }) {
   );
 }
 export default function RoomNotes({ notes }: { notes: Note[] }) {
+  const motionEnabled = useMotionEnabled();
   const root = useRef<HTMLDivElement>(null);
   const layer = useRef<HTMLImageElement>(null);
   const [enhanced, setEnhanced] = useState(false);
@@ -105,7 +107,7 @@ export default function RoomNotes({ notes }: { notes: Note[] }) {
     () => {
       if (
         layer.current &&
-        !matchMedia("(prefers-reduced-motion:reduce)").matches
+        motionEnabled
       )
         gsap.fromTo(
           layer.current,
@@ -113,7 +115,7 @@ export default function RoomNotes({ notes }: { notes: Note[] }) {
           { opacity: 1, scale: 1, duration: 0.65, ease: "power3.out" },
         );
     },
-    { dependencies: [loaded], scope: root, revertOnUpdate: true },
+    { dependencies: [loaded, motionEnabled], scope: root, revertOnUpdate: true },
   );
   const active = notes.find((n) => n.id === selected);
   return (

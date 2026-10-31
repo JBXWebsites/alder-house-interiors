@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import Navigation, { TopLink } from "@/components/Navigation";
 import { Arrow, Monogram } from "@/components/Icons";
 import Motion from "@/components/Motion";
+import MotionControl from "@/components/MotionControl";
 import "./globals.css";
 import "./experience.css";
 const serif = localFont({
@@ -110,6 +111,7 @@ export default function RootLayout({
             <div className="footer-signature" aria-hidden="true">Alder House</div>
             <div className="footer-colophon">
               <p>Concept studies · AI-generated interior imagery</p>
+              <MotionControl />
               <p>Designed & built by <a className="underlined" href="https://www.jbxwebstudio.com">JBX Web Studio</a></p>
             </div>
           </div>

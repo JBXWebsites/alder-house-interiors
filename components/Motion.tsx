@@ -5,17 +5,20 @@ import { usePathname } from "next/navigation";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { useMotionEnabled } from "@/components/MotionControl";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function Motion() {
   const path = usePathname();
+  const enabled = useMotionEnabled();
+  const introducedPath = useRef<string | null>(null);
   const sentinel = useRef<HTMLSpanElement>(null);
 
   useGSAP(
     () => {
       const root = sentinel.current?.closest("body");
-      if (!root) return;
+      if (!root || !enabled) return;
       const mm = gsap.matchMedia();
 
       mm.add(
@@ -40,7 +43,8 @@ export default function Motion() {
 
           // The opening is a short introduction, never a gate on scrolling.
           // Hash entries and restored scroll positions retain their settled state.
-          if (arrival && window.scrollY < 24 && !window.location.hash) {
+          if (arrival && introducedPath.current !== path && window.scrollY < 24 && !window.location.hash) {
+            introducedPath.current = path;
             const lines = arrival.querySelectorAll(".arrival-title .line-mask > span");
             const supporting = arrival.querySelectorAll(".arrival-caption, .arrival-link");
             const opening = gsap.timeline({ defaults: { ease: "power3.out" } });
@@ -238,8 +242,9 @@ export default function Motion() {
       );
       return () => mm.revert();
     },
-    { dependencies: [path], revertOnUpdate: true },
+    { dependencies: [path, enabled], revertOnUpdate: true },
   );
 
   return <span hidden ref={sentinel} />;
 }
+
