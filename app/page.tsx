@@ -55,38 +55,9 @@ export default async function Home({
             <a href="/projects/bay-window" className="project-photo" aria-label="View the Bay Window room story"><div className="photo-depth" data-parallax data-image-reveal><StudioImage src="/images/bay-window.webp" srcSet="/images/bay-window-640.webp 640w, /images/bay-window.webp 1024w" sizes="(max-width:760px) 100vw, 55vw" width="1024" height="1536" alt={projects[1].alt} loading="lazy" decoding="async" /></div><span className="image-visit" aria-hidden="true">Enter the room <Arrow /></span></a>
           </article>
           <div className="tide-column">
-
-            <article className="tide-study" id="tide-house">
-              <a
-                href="/projects/tide-house"
-                className="image-link"
-                aria-label="Explore Tide House"
-              >
-                <StudioImage
-                  src="/images/tide-house.webp"
-                  srcSet="/images/tide-house-640.webp 640w, /images/tide-house-960.webp 960w, /images/tide-house.webp 1536w"
-                  sizes="(max-width:760px) 100vw, 48vw"
-                  width="1536"
-                  height="1024"
-                  alt={projects[2].alt}
-                  loading="lazy"
-                  decoding="async"
-                  data-reveal
-                />
-              </a>
-              <div className="study-meta">
-                
-                <span>Kitchen & dining</span>
-              </div>
-              <h3>
-                <a href="/projects/tide-house">
-                  Tide House <Arrow />
-                </a>
-              </h3>
-              <p>
-                Cooking and gathering share the same room. Each area has its own
-                character, without interrupting the conversation.
-              </p>
+            <article className="tide-study room-chapter" id="tide-house">
+              <a href="/projects/tide-house" className="project-photo" aria-label="View the Tide House room story"><div className="photo-depth" data-parallax data-image-reveal><StudioImage src="/images/tide-house.webp" srcSet="/images/tide-house-640.webp 640w, /images/tide-house-960.webp 960w, /images/tide-house.webp 1536w" sizes="100vw" width="1536" height="1024" alt={projects[2].alt} loading="lazy" decoding="async" /></div><span className="image-visit" aria-hidden="true">Enter the room <Arrow /></span></a>
+              <div className="tide-caption"><div><p className="room-kind">Kitchen & gathering</p><h3 data-heading>Tide House.</h3></div><div><p>One space for making dinner.<br />And making a night of it.</p><a className="text-link" href="/projects/tide-house">Explore Tide House <Arrow /></a></div></div>
             </article>
           </div>
         </div>
