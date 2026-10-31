@@ -15,6 +15,13 @@
   letter-spacing: -0.025em;
   margin: 0 0 16px;
 }
+.brief-section .brief-builder h3 { font:500 21px/1.4 var(--font-sans),sans-serif; letter-spacing:0; }
+.brief-extras { grid-column:1/-1; border-block:1px solid var(--rule); }
+.brief-extras summary { display:flex; justify-content:space-between; gap:16px; padding:20px 0; cursor:pointer; font-size:14px; list-style:none; }
+.brief-extras summary::-webkit-details-marker { display:none; }
+.brief-extras summary > span:last-child { font-size:12px; }
+.brief-extras > .brief-fields { padding:8px 0 24px; }
+.brief-extras summary:focus-visible { outline:2px solid var(--ink); outline-offset:5px; }
 .brief-builder p {
   margin: 0;
 }

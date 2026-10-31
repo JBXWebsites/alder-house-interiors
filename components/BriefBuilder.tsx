@@ -57,6 +57,7 @@ export default function BriefBuilder({
   initialInspiration?: string;
 }) {
   const formRef = useRef<HTMLFormElement>(null);
+  const extrasRef = useRef<HTMLDetailsElement>(null);
   const summaryRef = useRef<HTMLDivElement>(null);
   const resultHeadingRef = useRef<HTMLHeadingElement>(null);
   const outputRef = useRef<HTMLTextAreaElement>(null);
@@ -128,6 +129,8 @@ export default function BriefBuilder({
   }, [initialInspiration]);
 
   useEffect(() => {
+    if ((errors.location || errors.timing || errors.inspiration) && extrasRef.current)
+      extrasRef.current.open = true;
     if (mode === "invalid" || mode === "failed") summaryRef.current?.focus();
     if (mode === "ready") resultHeadingRef.current?.focus();
   }, [mode, errors, failure]);
@@ -410,7 +413,7 @@ export default function BriefBuilder({
         aria-busy={preparing}
       >
         <div className="brief-introduction">
-          <h3 id="brief-form-heading">Build a project brief</h3>
+          <h3 id="brief-form-heading">Your starting point.</h3>
           <p>{COPY.notice}</p>
           <p className="brief-required">
             Space, type of help and description are required.
@@ -448,6 +451,20 @@ export default function BriefBuilder({
           <legend className="brief-visually-hidden">Your project</legend>
           {select("space")}
           {select("scope")}
+          <div className="brief-field brief-field-wide">
+            <label htmlFor="brief-brief">{FIELD_LABELS.brief}</label>
+            <textarea id="brief-brief" name="brief" required minLength={10} rows={5} dir="auto"
+              placeholder={COPY.placeholder} aria-invalid={Boolean(errors.brief) || undefined}
+              aria-describedby={description("brief")} />
+            <div className="brief-help-row">
+              <p className="brief-help" id="brief-brief-help">{COPY.briefHelp}</p>
+              <span className={`brief-count${counts.brief > 2000 ? " is-over" : ""}`}>{counts.brief.toLocaleString("en-US")} / 2,000</span>
+            </div>
+            {errors.brief && <p className="brief-error" id="brief-brief-error">{errors.brief}</p>}
+          </div>
+          <details ref={extrasRef} className="brief-extras">
+            <summary><span>A few more details</span><span>Optional +</span></summary>
+            <div className="brief-fields">
           <div className="brief-field">
             <label htmlFor="brief-location">{FIELD_LABELS.location}</label>
             <input
@@ -476,36 +493,9 @@ export default function BriefBuilder({
             )}
           </div>
           {select("timing")}
-          <div className="brief-field brief-field-wide">
-            <label htmlFor="brief-brief">{FIELD_LABELS.brief}</label>
-            <textarea
-              id="brief-brief"
-              name="brief"
-              required
-              minLength={10}
-              rows={5}
-              dir="auto"
-              placeholder={COPY.placeholder}
-              aria-invalid={Boolean(errors.brief) || undefined}
-              aria-describedby={description("brief")}
-            />
-            <div className="brief-help-row">
-              <p className="brief-help" id="brief-brief-help">
-                {COPY.briefHelp}
-              </p>
-              <span
-                className={`brief-count${counts.brief > 2000 ? " is-over" : ""}`}
-              >
-                {counts.brief.toLocaleString("en-US")} / 2,000
-              </span>
-            </div>
-            {errors.brief && (
-              <p className="brief-error" id="brief-brief-error">
-                {errors.brief}
-              </p>
-            )}
-          </div>
           {select("inspiration")}
+            </div>
+          </details>
         </fieldset>
         <div className="brief-processing">
           <p>{COPY.processing}</p>

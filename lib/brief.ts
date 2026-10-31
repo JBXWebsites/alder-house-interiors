@@ -13,12 +13,12 @@ export const DOWNLOAD_NAME = "alder-house-project-brief.txt";
 export const MAX_BODY_BYTES = 32_768;
 
 export const FIELD_LABELS: Record<BriefField, string> = {
-  space: "Which space are you thinking about?",
-  scope: "What kind of help would be useful?",
-  location: "Where is the home? (optional)",
-  timing: "When are you thinking of starting? (optional)",
-  brief: "What would you like the space to make easier?",
-  inspiration: "A study you connected with (optional)",
+  space: "Your space",
+  scope: "Type of help",
+  location: "City or region (optional)",
+  timing: "When would you start? (optional)",
+  brief: "What would you like to change?",
+  inspiration: "Room inspiration (optional)",
 };
 
 export const OPTIONS = {
