@@ -3,11 +3,12 @@ import { Suspense } from "react";
 import { Arrow } from "@/components/Icons";
 import RoomNotes from "@/components/RoomNotes";
 import BriefBuilder from "@/components/BriefBuilder";
+import BriefStart from "@/components/BriefStart";
 import { projects } from "@/lib/projects";
 export default async function Home({
   searchParams,
 }: {
-  searchParams: Promise<{ inspiration?: string | string[] }>;
+  searchParams: Promise<{ inspiration?: string | string[]; scope?: string; space?: string }>;
 }) {
   const query = await searchParams;
   const inspiration =
@@ -72,9 +73,9 @@ export default async function Home({
         <div className="shell approach-layout">
           <div className="approach-intro"><h2 id="approach-title" data-heading>A fresh start.<br /><em>At your scale.</em></h2><p>Keep what you love. Change what gets in the way. Start with the part of your home that needs attention.</p></div>
           <div className="service-choices">
-            <details name="services"><summary><span>A single room<small>Make one space work harder.</small></span><span aria-hidden="true">+</span></summary><div><p>Begin with the layout. Then bring furniture, lighting and materials into one clear direction.</p><a className="text-link" href="#project-brief">Start with a room <Arrow /></a></div></details>
-            <details name="services"><summary><span>A whole home<small>Find the thread between rooms.</small></span><span aria-hidden="true">+</span></summary><div><p>Build a shared palette and a plan for the way rooms connect, while keeping space for the pieces you already own.</p><a className="text-link" href="#project-brief">Start with your home <Arrow /></a></div></details>
-            <details name="services"><summary><span>A renovation<small>Think through the lasting decisions.</small></span><span aria-hidden="true">+</span></summary><div><p>Explore interior layouts, finishes and joinery before developing the details with your project team.</p><a className="text-link" href="#project-brief">Start a renovation brief <Arrow /></a></div></details>
+            <details name="services"><summary><span>A single room<small>Make one space work harder.</small></span><span aria-hidden="true">+</span></summary><div><p>Begin with the layout. Then bring furniture, lighting and materials into one clear direction.</p><BriefStart scope="single-room">Start with a room</BriefStart></div></details>
+            <details name="services"><summary><span>A whole home<small>Find the thread between rooms.</small></span><span aria-hidden="true">+</span></summary><div><p>Build a shared palette and a plan for the way rooms connect, while keeping space for the pieces you already own.</p><BriefStart scope="furnishing" space="several-rooms">Start with your home</BriefStart></div></details>
+            <details name="services"><summary><span>A renovation<small>Think through the lasting decisions.</small></span><span aria-hidden="true">+</span></summary><div><p>Explore interior layouts, finishes and joinery before developing the details with your project team.</p><BriefStart scope="renovation">Start a renovation brief</BriefStart></div></details>
             <p className="service-disclosure">Example services for this fictional studio.</p>
           </div>
         </div>
@@ -92,10 +93,11 @@ export default async function Home({
 
           </div>
           <Suspense fallback={<p>The brief form is loading.</p>}>
-            <BriefBuilder initialInspiration={inspiration} />
+            <BriefBuilder initialScope={typeof query.scope === "string" ? query.scope : ""} initialSpace={typeof query.space === "string" ? query.space : ""} initialInspiration={inspiration} />
           </Suspense>
         </div>
       </section>
     </main>
   );
 }
+

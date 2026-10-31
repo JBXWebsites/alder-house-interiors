@@ -53,8 +53,12 @@ function serverErrors(value: unknown): FieldErrors {
 
 export default function BriefBuilder({
   initialInspiration = "",
+  initialScope = "",
+  initialSpace = "",
 }: {
   initialInspiration?: string;
+  initialScope?: string;
+  initialSpace?: string;
 }) {
   const formRef = useRef<HTMLFormElement>(null);
   const extrasRef = useRef<HTMLDetailsElement>(null);
@@ -143,6 +147,24 @@ export default function BriefBuilder({
     );
     return () => clearTimeout(timer);
   }, [retryUntil]);
+
+  useEffect(() => {
+    const start = (event: Event) => {
+      const choice = (event as CustomEvent<{scope: string; space: string}>).detail;
+      if (!choice || !isOption("scope", choice.scope)) return;
+      requestId.current += 1;
+      requestRef.current?.abort();
+      requestRef.current = null;
+      for (const field of ["scope", "space"] as const) {
+        const input = formRef.current?.elements.namedItem(field) as HTMLSelectElement | null;
+        if (input && isOption(field, choice[field])) input.value = choice[field];
+      }
+      setResult(null); setErrors({}); setFailure(""); setFeedback(""); setCopying(false); setMode("editing");
+      requestAnimationFrame(() => (formRef.current?.elements.namedItem("scope") as HTMLElement | null)?.focus({preventScroll:true}));
+    };
+    window.addEventListener("alder:brief-start", start);
+    return () => window.removeEventListener("alder:brief-start", start);
+  }, []);
 
   function onInput() {
     if (!formRef.current) return;
@@ -364,7 +386,9 @@ export default function BriefBuilder({
           name={field}
           required={field === "space" || field === "scope"}
           defaultValue={
-            field === "timing"
+            field === "scope" && isOption("scope", initialScope) ? initialScope
+            : field === "space" && isOption("space", initialSpace) ? initialSpace
+            : field === "timing"
               ? "not-sure"
               : field === "inspiration" &&
                   isOption("inspiration", initialInspiration)
