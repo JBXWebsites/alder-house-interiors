@@ -814,3 +814,47 @@
     background: transparent;
   }
 }
+
+/* Project arrivals share the homepage's room-first scale and quiet framing. */
+.project-story .story-arrival { padding-top:28px; }
+.project-story .story-breadcrumb { margin-bottom:64px; font-size:14px; }
+.project-story .story-provenance { text-decoration:underline; max-width:30ch; }
+.project-story .story-heading { margin-bottom:44px; }
+.project-story .story-category { font-size:14px; letter-spacing:0; margin-bottom:20px; }
+.project-story .story-heading h1 { font-size:clamp(80px,10vw,152px); letter-spacing:-.055em; }
+.project-story .story-deck { font-size:20px; line-height:1.5; max-width:24ch; }
+.project-story .story-establishing { grid-column:1/-1; }
+.story-establishing-media { height:clamp(460px,53vw,760px); position:relative; overflow:hidden; }
+.story-establishing-media > img { width:100%; height:120%; position:relative; top:-10%; object-fit:cover; }
+.story-establishing-media > .media-fallback { height:100%; aspect-ratio:auto!important; }
+.project-story .story-establishing figcaption { font-size:13px; padding-top:0; margin-top:16px; }
+.story-bay-window .story-heading { grid-column:1/6; align-self:center; margin-top:0; }
+.story-bay-window .story-heading h1 { max-width:6ch; }
+.story-bay-window .story-deck { margin-top:32px; }
+.story-bay-window .story-establishing { grid-column:7/-1; grid-row:2; }
+.story-bay-window .story-establishing-media { height:clamp(560px,60vw,820px); }
+@media(max-width:1000px) {
+ .project-story .story-heading h1 { font-size:clamp(64px,9vw,100px); }
+ .project-story .story-deck { font-size:18px; }
+ .project-story .story-breadcrumb { margin-bottom:44px; }
+}
+@media(max-width:760px) {
+ .project-story .story-arrival { padding-top:20px; }
+ .project-story .story-breadcrumb { display:block; margin-bottom:36px; }
+ .project-story .story-breadcrumb .story-link { font-size:14px; }
+ .project-story .story-provenance { display:block; max-width:none; margin-top:18px; font-size:13px; }
+ .project-story .story-heading { margin:0 0 32px; }
+ .project-story .story-category { margin-bottom:16px; }
+ .project-story .story-heading h1 { font-size:clamp(52px,13vw,84px); max-width:none; }
+ .project-story .story-deck { margin-top:24px; max-width:28ch; font-size:18px; }
+ .project-story .story-establishing { max-width:none; }
+ .project-story .story-establishing-media { height:auto; aspect-ratio:3/2; }
+ .story-bay-window .story-establishing-media { aspect-ratio:4/5; }
+ .story-establishing-media > img { height:100%; top:0; }
+ .project-story .story-establishing figcaption { font-size:12px; }
+}
+@media print {
+ .project-story .story-establishing-media { height:auto; aspect-ratio:auto; overflow:visible; }
+ .story-establishing-media > img { height:auto; top:0; max-height:300pt; width:auto; transform:none!important; }
+ .project-story .story-heading h1 { font-size:40pt; }
+}

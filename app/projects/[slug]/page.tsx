@@ -46,7 +46,11 @@ export default async function ProjectPage({ params }: Props) {
   const project = getProject((await params).slug);
   if (!project) notFound();
   const next = getProject(project.next)!;
-  const number = String(projects.indexOf(project) + 1).padStart(2, "0");
+  const introductions: Record<string, string> = {
+    "palm-court": "A place to gather. A little space to yourself.",
+    "bay-window": "A sunny corner, given a life of its own.",
+    "tide-house": "Cooking and company, in the same conversation.",
+  };
 
   return (
     <main
@@ -57,16 +61,19 @@ export default async function ProjectPage({ params }: Props) {
       <div className="story-arrival shell">
         <div className="story-breadcrumb">
           <a href="/#work" className="story-link">
-            <Arrow direction="left" /> All room studies
+            <Arrow direction="left" /> Back to the rooms
           </a>
-          <span>Study {number} / 03</span>
+          <a href="/about-this-project" className="story-provenance">
+            An imagined interior by JBX Web Studio
+          </a>
         </div>
         <header className="story-heading">
-          <p className="story-category">{project.category}</p>
-          <h1>{project.title}</h1>
-          <p className="story-deck">{project.description}</p>
+          <p className="story-category">{project.category.split(" / ")[0]}</p>
+          <h1 data-heading>{project.title}</h1>
+          <p className="story-deck">{introductions[project.slug]}</p>
         </header>
         <figure className="story-establishing">
+          <div className="story-establishing-media" data-parallax>
           <Image
             src={project.image}
             alt={project.alt}
@@ -75,21 +82,16 @@ export default async function ProjectPage({ params }: Props) {
             sizes={
               project.slug === "bay-window"
                 ? "(max-width: 760px) calc(100vw - 44px), 55vw"
-                : "(max-width: 760px) calc(100vw - 44px), 85vw"
+                : "(max-width: 760px) calc(100vw - 44px), 100vw"
             }
             preload
           />
+          </div>
           <figcaption>
-            <span>{project.title} / The whole room</span>
+            <span>{project.title}, in full.</span>
             <span>Generated concept image</span>
           </figcaption>
         </figure>
-        <div className="story-opening">
-          <p>{project.opening}</p>
-          <a href="/about-this-project" className="story-provenance">
-            A fictional study by JBX Web Studio
-          </a>
-        </div>
       </div>
 
       <section
