@@ -34,6 +34,11 @@ export default async function Home({
         aria-labelledby="work-title"
       >
         <div className="work-heading"><h2 id="work-title" data-heading>Three rooms.<br /><em>Three ways to live.</em></h2><p>Imagined interiors, explored in detail.</p></div>
+        <nav className="room-directory" aria-label="Choose a room">
+          <a href="#palm-court"><span>Palm Court</span><span>Gather & unwind</span><Arrow direction="down" /></a>
+          <a href="#bay-window"><span>Bay Window</span><span>Pause & read</span><Arrow direction="down" /></a>
+          <a href="#tide-house"><span>Tide House</span><span>Cook & connect</span><Arrow direction="down" /></a>
+        </nav>
         <div className="project-intro" id="palm-court">
           <div>
             <span className="eyebrow">
@@ -45,7 +50,7 @@ export default async function Home({
         </div>
         <RoomNotes notes={palm.notes} />
         <div className="study-spread">
-          <article className="bay-study">
+          <article className="bay-study" id="bay-window">
             <a
               href="/projects/bay-window"
               className="image-link"
@@ -79,7 +84,7 @@ export default async function Home({
           </article>
           <div className="tide-column">
 
-            <article className="tide-study">
+            <article className="tide-study" id="tide-house">
               <a
                 href="/projects/tide-house"
                 className="image-link"

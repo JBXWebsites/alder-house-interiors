@@ -19,6 +19,18 @@ h1, h2, h3 { text-wrap: balance; }
 .project-intro .eyebrow { text-transform:none; letter-spacing:0; font-size:15px; }
 .project-intro h3 { margin-top:12px; font-size:clamp(44px,5vw,72px); }
 .study-meta { justify-content:flex-start; text-transform:none; letter-spacing:0; font-size:14px; }
+.room-directory { display:flex; gap:40px; margin:0 0 96px; border-top:1px solid var(--rule); }
+.room-directory a { flex:1; display:grid; grid-template-columns:1fr auto; gap:4px 16px; padding:24px 0; border-bottom:1px solid var(--rule); }
+.room-directory a > span:first-child { font:400 26px/1.3 var(--font-serif); letter-spacing:-.025em; }
+.room-directory a > span:nth-child(2) { grid-row:2; font-size:14px; }
+.room-directory svg { grid-column:2; grid-row:1/3; align-self:center; }
+.room-directory a:hover { color:var(--rust); }
+.work-heading { margin-bottom:44px; }
+@media(max-width:760px) {
+ .room-directory { display:block; margin-bottom:64px; }
+ .room-directory a { padding:18px 0; }
+ .room-directory a > span:first-child { font-size:24px; }
+}
 @media(max-width:760px) {
  .work-heading { display:block; margin-bottom:64px; }
  .work-heading p { margin-top:24px; max-width:none; }
