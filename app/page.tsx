@@ -68,81 +68,14 @@ export default async function Home({
           <div className="material-copy"><h2 id="studio-title" data-heading>Made to<br />be touched.<br /><em>And lived with.</em></h2><p>Linen that softens. Timber that wears in. Stone that holds its texture. A home gets better when its materials can show a little life.</p><a className="text-link" href="/about-this-project">Our point of view <Arrow /></a></div>
         </div>
       </section>
-      <section
-        className="approach-section"
-        id="approach"
-        aria-labelledby="approach-title"
-      >
-        <div className="shell">
-          <div className="section-heading">
-            <span className="eyebrow">How we work</span>
-            <div>
-              <h2 id="approach-title">
-                A considered home starts
-                <br />
-                <em>with a conversation.</em>
-              </h2>
-              <p>
-                You do not need to arrive with a finished vision. Begin with
-                what feels right, what feels unresolved, and what you want the
-                room to make easier.
-              </p>
-            </div>
-          </div>
-          <div className="service-list">
-            {[
-              {
-                name: "A room",
-                n: "01",
-                text: "Furniture, lighting, color and the details that help a single space feel complete.",
-              },
-              {
-                name: "A home",
-                n: "02",
-                text: "A connected direction for several rooms, with room for the things you already love.",
-              },
-              {
-                name: "A renovation",
-                n: "03",
-                text: "Interior layouts, finishes and joinery ideas to develop alongside your project team.",
-              },
-            ].map((s) => (
-              <div className="service-row" key={s.n}>
-                <span className="eyebrow">{s.n}</span>
-                <h3>{s.name}</h3>
-                <p>{s.text}</p>
-              </div>
-            ))}
-          </div>
-          <p className="scope-disclosure">
-            An example of how the fictional Alder House studio could present its
-            services.
-          </p>
-          <div className="process">
-            <p className="process-title">
-              From the first thought
-              <br />
-              <em>to the final layer.</em>
-            </p>
-            {[
-              {
-                name: "Listen",
-                text: "The routines, the awkward corners and the things worth keeping.",
-              },
-              {
-                name: "Shape",
-                text: "Layout, materials and furnishings, with decisions explained along the way.",
-              },
-              {
-                name: "Bring together",
-                text: "The details that make a room coherent, comfortable and ready for daily life.",
-              },
-            ].map((s) => (
-              <div key={s.name}>
-                <h3>{s.name}</h3>
-                <p>{s.text}</p>
-              </div>
-            ))}
+      <section className="approach-section" id="approach" aria-labelledby="approach-title">
+        <div className="shell approach-layout">
+          <div className="approach-intro"><h2 id="approach-title" data-heading>A fresh start.<br /><em>At your scale.</em></h2><p>Keep what you love. Change what gets in the way. Start with the part of your home that needs attention.</p></div>
+          <div className="service-choices">
+            <details name="services"><summary><span>A single room<small>Make one space work harder.</small></span><span aria-hidden="true">+</span></summary><div><p>Begin with the layout. Then bring furniture, lighting and materials into one clear direction.</p><a className="text-link" href="#project-brief">Start with a room <Arrow /></a></div></details>
+            <details name="services"><summary><span>A whole home<small>Find the thread between rooms.</small></span><span aria-hidden="true">+</span></summary><div><p>Build a shared palette and a plan for the way rooms connect, while keeping space for the pieces you already own.</p><a className="text-link" href="#project-brief">Start with your home <Arrow /></a></div></details>
+            <details name="services"><summary><span>A renovation<small>Think through the lasting decisions.</small></span><span aria-hidden="true">+</span></summary><div><p>Explore interior layouts, finishes and joinery before developing the details with your project team.</p><a className="text-link" href="#project-brief">Start a renovation brief <Arrow /></a></div></details>
+            <p className="service-disclosure">Example services for this fictional studio.</p>
           </div>
         </div>
       </section>
