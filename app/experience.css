@@ -34,6 +34,14 @@ h1, h2, h3 { text-wrap: balance; }
 .room-notes .note-body { padding:0 0 28px; }
 .room-notes .note-body p { font-size:15px; line-height:1.7; }
 .room-notes .note-body p { max-width:42ch; }
+.room-points { position:absolute; inset:0; }
+.room-point { position:absolute; display:flex; align-items:center; gap:10px; padding:6px 14px 6px 6px; min-height:44px; border:1px solid var(--chalk); background:var(--ink); color:var(--chalk); font-size:13px; border-radius:0; }
+.room-point > span:first-child { display:grid; place-items:center; width:30px; height:30px; font-size:22px; font-weight:400; }
+.room-point:hover { background:var(--rust); }
+.point-light { left:8%; top:35%; }
+.point-layout { left:43%; top:16%; }
+.point-material { right:4%; top:45%; }
+@media(max-width:1199px) { .room-points { display:none; } }
 @media(max-width:760px) {
  .room-directory { display:block; margin-bottom:64px; }
  .room-directory a { padding:18px 0; }
