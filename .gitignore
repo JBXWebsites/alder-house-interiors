@@ -16,7 +16,7 @@
 !/.github/
 !/docs/
 
-# Only these four source images are public documentation assets.
+# Only the reviewed source images are public documentation assets.
 /docs/*
 !/docs/concepts/
 /docs/concepts/*

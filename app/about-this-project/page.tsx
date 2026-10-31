@@ -24,8 +24,8 @@ export default function AboutThisProject() {
       <div className="concept-body shell">
         <aside className="concept-image">
           <Image
-            src="/images/materials.webp"
-            alt="Blue linen, pale stone and timber samples arranged on a dark table beside a notebook and an olive branch."
+            src="/images/materials-daylight-1024.webp"
+            alt="Creased linen, limestone and walnut samples beside a tea cup on a worn oak worktable in daylight."
             width={1024}
             height={1536}
             sizes="(max-width: 760px) calc(100vw - 44px), 32vw"

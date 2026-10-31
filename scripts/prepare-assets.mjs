@@ -41,6 +41,13 @@ async function variants(name, source, rectangle = null) {
   }
 }
 for (const source of ['palm-court', 'bay-window', 'tide-house', 'materials']) await variants(source, source);
+for (const [source, sizes] of [['arrival', [640, 960, 1536]], ['materials-daylight', [640, 1024]]]) {
+  for (const width of sizes) {
+    const destination = path.join(images, `${source}-${width}.webp`);
+    await sharp(path.join(originals, `${source}.png`)).rotate().resize({ width, withoutEnlargement: true }).webp({quality:86, effort:6}).toFile(destination);
+    await record(destination, `docs/concepts/${source}.png`);
+  }
+}
 for (const [name, source, left, top, width, height] of crops) await variants(name, source, { left, top, width, height });
 
 // Original open-line joinery construction from BRAND-SYSTEM.md. No external fonts or assets.
@@ -62,7 +69,7 @@ for (const [family, filename] of [['gelasio', 'Gelasio-OFL.txt'], ['hanken-grote
 // Use an installed local serif fallback for deterministic raster labels; site fonts remain self-hosted Gelasio/Hanken.
 const xml = value => value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
 const socials = [
-  ['home', 'palm-court', 'Rooms for the', 'way you live.'],
+  ['home', 'arrival', 'Rooms for', 'the life within.'],
   ['palm-court', 'palm-court', 'Palm Court', 'Living, together.'],
   ['bay-window', 'bay-window', 'Bay Window', 'A place to stay.'],
   ['tide-house', 'tide-house', 'Tide House', 'Room to gather.'],
@@ -71,7 +78,7 @@ for (const [slug, source, first, second] of socials) {
   const photo = await sharp(path.join(originals, `${source}.png`))
     .resize(664, 534, { fit: 'cover', position: 'centre', withoutEnlargement: true }).toBuffer();
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-    <rect width="1200" height="630" fill="#c9dbe4"/>
+    <rect width="1200" height="630" fill="#e9e1d2"/>
     <g fill="#2e2118"><text x="48" y="85" font-family="Georgia,serif" font-size="38">Alder House</text>
     <text x="48" y="260" font-family="Georgia,serif" font-size="49">${xml(first)}</text>
     <text x="48" y="321" font-family="Georgia,serif" font-style="italic" font-size="43">${xml(second)}</text>

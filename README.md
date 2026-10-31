@@ -36,7 +36,7 @@ Tests cover brief validation, formatting and endpoint behavior. CI runs installa
 - `lib/site.ts`: canonical origin validation and preview indexing policy.
 - `tests/`: automated brief tests.
 - `public/`: shipped images, brand assets and font licenses.
-- `docs/concepts/`: four original generated PNGs for reproducing image derivatives.
+- `docs/concepts/`: six original generated PNGs for reproducing image derivatives.
 - `scripts/prepare-assets.mjs`: image, crop, brand and social-preview generation.
 
 Planning documents and third-party reference downloads are not part of the public repository. No remote source assets are required to display the site.
@@ -51,13 +51,13 @@ No personal or sensitive details are needed. Downloads are saved by the browser.
 
 ## Motion and accessibility
 
-GSAP supplies authored animation: a small eligible desktop hero parallax, source-matched Room Notes transitions, restrained image entrances and arrow feedback. Scrolling and navigation remain native. Reduced motion removes authored movement while preserving content and controls.
+GSAP supplies the opening line sequence, expanding arrival frame, masked chapter reveals, source-matched Room Notes transitions, photographic parallax and arrow feedback. A footer control settles motion immediately and remembers that choice for the tab session; device reduced-motion preferences take priority. Scrolling and navigation remain native. Reduced motion removes authored movement while preserving content and controls.
 
-Room Notes begins with native disclosures; full stories keep every note readable as static content. The brief has persistent labels, validation feedback and a native form path. Test keyboard use, zoom, touch, reduced motion, delayed hydration and failed image/network requests before release.
+Room Notes begins with native disclosures; full stories keep every note readable as static content. The brief begins with three required answers and an optional-details disclosure. Service choices preselect the relevant scope without clearing existing writing. It has persistent labels, linked validation feedback and a native form path. Test keyboard use, zoom, touch, reduced motion, delayed hydration and failed image/network requests before release.
 
 ## Assets and provenance
 
-The four source images are generated concept art created for this project. Detail images are crops of the corresponding source, not evidence of additional built rooms. `public/images/asset-manifest.json` records source-relative paths, crop rectangles, dimensions and encoded sizes.
+The six source images are generated concept art created for this project. Detail images are crops of the corresponding source, not evidence of additional built rooms. `public/images/asset-manifest.json` records source-relative paths, crop rectangles, dimensions and encoded sizes.
 
 To regenerate derivatives after a deliberate source change:
 
@@ -99,3 +99,4 @@ node scripts/smoke.mjs https://alder-house-interiors.vercel.app
 ```
 
 The smoke check submits four synthetic brief requests and does not send an inquiry or create a saved record. Avoid repeated runs within the firewall window. Physical-device Safari, native screen-reader use, rendered print output and field performance remain unverified. No commercial results, award or universal browser compatibility is claimed.
+

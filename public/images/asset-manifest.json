@@ -96,6 +96,46 @@
     "rectangle": null
   },
   {
+    "file": "/images/arrival-640.webp",
+    "width": 640,
+    "height": 427,
+    "bytes": 48670,
+    "source": "docs/concepts/arrival.png",
+    "rectangle": null
+  },
+  {
+    "file": "/images/arrival-960.webp",
+    "width": 960,
+    "height": 640,
+    "bytes": 98474,
+    "source": "docs/concepts/arrival.png",
+    "rectangle": null
+  },
+  {
+    "file": "/images/arrival-1536.webp",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 220078,
+    "source": "docs/concepts/arrival.png",
+    "rectangle": null
+  },
+  {
+    "file": "/images/materials-daylight-640.webp",
+    "width": 640,
+    "height": 960,
+    "bytes": 186886,
+    "source": "docs/concepts/materials-daylight.png",
+    "rectangle": null
+  },
+  {
+    "file": "/images/materials-daylight-1024.webp",
+    "width": 1024,
+    "height": 1536,
+    "bytes": 452826,
+    "source": "docs/concepts/materials-daylight.png",
+    "rectangle": null
+  },
+  {
     "file": "/images/palm-court-light.webp",
     "width": 800,
     "height": 600,
@@ -326,15 +366,15 @@
     "file": "/images/social-home.jpg",
     "width": 1200,
     "height": 630,
-    "bytes": 106530,
-    "source": "docs/concepts/palm-court.png + original editorial label composition",
+    "bytes": 90499,
+    "source": "docs/concepts/arrival.png + original editorial label composition",
     "rectangle": null
   },
   {
     "file": "/images/social-palm-court.jpg",
     "width": 1200,
     "height": 630,
-    "bytes": 106598,
+    "bytes": 103976,
     "source": "docs/concepts/palm-court.png + original editorial label composition",
     "rectangle": null
   },
@@ -342,7 +382,7 @@
     "file": "/images/social-bay-window.jpg",
     "width": 1200,
     "height": 630,
-    "bytes": 100840,
+    "bytes": 98168,
     "source": "docs/concepts/bay-window.png + original editorial label composition",
     "rectangle": null
   },
@@ -350,7 +390,7 @@
     "file": "/images/social-tide-house.jpg",
     "width": 1200,
     "height": 630,
-    "bytes": 78989,
+    "bytes": 76137,
     "source": "docs/concepts/tide-house.png + original editorial label composition",
     "rectangle": null
   }

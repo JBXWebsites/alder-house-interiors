@@ -59,7 +59,7 @@ export const metadata: Metadata = {
         url: "/images/social-home.jpg",
         width: 1200,
         height: 630,
-        alt: "Palm Court, an Alder House concept by JBX Web Studio",
+        alt: "A shaded doorway and courtyard, an Alder House concept by JBX Web Studio",
       },
     ],
   },
